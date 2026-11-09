@@ -21,6 +21,14 @@ def web_search(query):
     return f"Результаты поиска по запросу: {query}"
 
 
+@tool("calculator", "Считает арифметическое выражение")
+def calculator(expression):
+    allowed = set("0123456789+-*/(). ")
+    if not set(expression) <= allowed:
+        raise ValueError("Недопустимые символы в выражении")
+    return eval(expression)
+
+
 if __name__ == "__main__":
     print("Инструменты агента:")
     for name, meta in TOOLS.items():
