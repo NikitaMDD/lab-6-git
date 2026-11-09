@@ -16,6 +16,11 @@ def ask_questions(questions):
     return [f"? {q}" for q in questions]
 
 
+@tool("web_search", "Ищет информацию в интернете по запросу")
+def web_search(query):
+    return f"Результаты поиска по запросу: {query}"
+
+
 if __name__ == "__main__":
     print("Инструменты агента:")
     for name, meta in TOOLS.items():
