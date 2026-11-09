@@ -17,4 +17,6 @@ def ask_questions(questions):
 
 
 if __name__ == "__main__":
-    print("Инструменты агента:", list(TOOLS))
+    print("Инструменты агента:")
+    for name, meta in TOOLS.items():
+        print(f"  - {name}: {meta['description']}")
